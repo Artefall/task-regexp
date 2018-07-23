@@ -1,17 +1,14 @@
-function isValidPassword(pw){
-    let password = pw;
-    new Promise (function(resolve,reject){
-        resolve(password);
-    })
-    .then(() => isMoreThan10(password))
-    .then(() => isIncludeHighRegister(password))
-    .then(() => isIncludeLowRegister(password))
-    .then(() => isIncludeNumber(password))
-    .then(() => isIncludeSpecialNumber(password))
-    .catch(() => new Error())
-    .then(() => {
+function isValidPassword(password){
+    if(isMoreThan10(password),
+    isIncludeHighRegister(password),
+    isIncludeLowRegister(password),
+    isIncludeNumber(password),
+    isIncludeSpecialNumber(password)){
         return true;
-    });
+    }
+    else{
+        return false;
+    }
 }
 
 function isMoreThan10(password){
